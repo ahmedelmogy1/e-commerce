@@ -1,0 +1,18 @@
+{
+  "routes": [
+    "/",
+    "/allorders",
+    "/brands",
+    "/cart",
+    "/categories",
+    "/home",
+    "/login",
+    "/products",
+    "/register",
+    "/resetPassword",
+    "/resetPassword/forgetPassword",
+    "/resetPassword/resetPasswordPage",
+    "/resetPassword/verifyPage",
+    "/wish"
+  ]
+}
