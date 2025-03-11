@@ -1,0 +1,45 @@
+<section class="my-5">
+    <div class="container ">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-4">
+                <!-- <owl-carousel-o [options]="customOptions">
+
+                 @for (img of pDetails.images; track $index) {
+                    <ng-template carouselSlide >
+                        <img [src]="img" class="w-75">
+                      </ng-template>
+                 }
+                  </owl-carousel-o>
+
+                <div class="w-75">
+                    @for (img of pDetails.images; track $index) {
+                    
+                        <img [src]="img" class="w-25 border border-black border-1 mx-1 my-1">
+                    
+                 }
+                </div> -->
+               <app-slider [images]="pDetails.images" ></app-slider>
+            </div>
+            <div class="col-12 col-md-8">
+    
+                <h2 class="h3">{{pDetails.title}}</h2>
+                <h3 class="h6 text-secondary">{{pDetails.description}}</h3>
+                <h4 class="small text-main">{{pDetails.category.name}}</h4>
+                <div class="d-flex justify-content-between">
+                    <h4>{{pDetails.price}} EGP</h4>
+                    <div class="text-warning small">
+                        @for (rate of [1,2,3,4,5].slice(0,pDetails.ratingsAverage); track $index) {
+                            <i class="fa-solid fa-star"></i>
+                        }
+                        @if (pDetails.ratingsAverage %1 !== 0) {
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        }
+                             <span class="text-muted">({{pDetails.ratingsQuantity}})</span>
+                        </div>
+                    </div>
+                    <button class="btn-main w-100" (click)="addProductToCart(pId!)">+ add to cart</button>
+            </div>
+        </div>
+    </div>
+    
+</section>

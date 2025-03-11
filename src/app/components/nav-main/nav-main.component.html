@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid container-md">
+    <!-- <a class="navbar-brand" href="#"><img src="./assets/imgs/freshcart-logo.png" alt=""></a> -->
+     <div class="me-2"><i class="fa-brands fa-opencart text-main fa-2x"></i> <span class="  fs-3 user-select-none fa-angellist d-inline-block mx-1 main-logo-text">FreshCart</span> </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a class="nav-link nav-style" routerLink="home" routerLinkActive="active-link">Home</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link nav-style" routerLink="products" routerLinkActive="active-link">Products</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link nav-style" routerLink="categories" routerLinkActive="active-link">categories</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link nav-style" routerLink="brands" routerLinkActive="active-link">Brands</a>
+        </li>
+        <!-- <li class="nav-item ">
+          <a class="nav-link nav-style" routerLink="allorders" routerLinkActive="active-link">Orders</a>
+        </li> -->
+     
+
+      </ul>
+      <ul class="navbar-nav ms-auto navbar-nav-icon">
+       
+        <li class="nav-item position-relative d-flex justify-content-center align-items-center user-select-none nav-item-icon" >
+          <a class="nav-link pointer-event cart  amazonIcon  " routerLink="wish" > <i class="fa-solid fa-heart text-danger fs-4 fa-beat"></i></a>
+        </li>
+        <li class="nav-item position-relative d-flex justify-content-center align-items-center user-select-none nav-item-icon" >
+          <a class="nav-link pointer-event cart  amazonIcon  " routerLink="cart" > <img src="./assets/imgs/icons8-shopping-cart-48.png" class=" mx-auto d-block" alt=""  ></a>
+          <span class=" position-absolute   fw-bolder countOfCart"> {{countOfCart}} </span>
+        </li>
+        <li class="nav-item nav-item-icon">
+          <a class="nav-link  facebook " aria-current="page" ><i class="fa-brands fa-facebook fs-4 cursor-pointer"></i></a>
+        </li>
+        <li class="nav-item nav-item-icon">
+          <a class="nav-link  twitter" aria-current="page" ><i class="fa-brands fa-twitter fs-4 cursor-pointer"></i></a>
+        </li>
+        <li class="nav-item nav-item-icon">
+          <a class="nav-link  linkedin" aria-current="page" ><i class="fa-brands fa-linkedin fs-4 cursor-pointer"></i></a>
+        </li>
+        <li class="nav-item nav-item-icon">
+          <a class="nav-link  instagram" aria-current="page" ><i class="fa-brands fa-instagram fs-4 cursor-pointer"></i></a>
+        </li>
+        <li class="nav-item nav-item-icon">
+          <a class="nav-link  youtube" aria-current="page" ><i class="fa-brands fa-youtube fs-4 cursor-pointer"></i></a>
+        </li>
+       
+        <li class="nav-item nav-item-icon">
+          <a class="nav-link cursor-pointer signOut" aria-current="page" (click)="logout()" >signOut</a>
+        </li>
+     
+
+      </ul>
+
+
+
+
+      
+    </div>
+  </div>
+</nav>

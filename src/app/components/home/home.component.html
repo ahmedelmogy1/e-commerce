@@ -1,0 +1,114 @@
+
+
+
+
+  
+  <section class="">
+    <div class="container" >
+      <div class="row g-0 " >
+        <div class="col-12 col-md-9">
+          <owl-carousel-o [options]="curoserMain">
+            <ng-template carouselSlide> 
+                  <img src="../../../assets/imgs/img banner 2 .jpg"  [alt]="" class="img-slider" >
+            </ng-template>
+            <ng-template carouselSlide> 
+              <img src="../../../assets/imgs/img banner 3.jpg"  [alt]="" class="img-slider" >
+      
+            </ng-template>
+            <ng-template carouselSlide> 
+              <img src="../../../assets/imgs/img banner 4.jpg"  [alt]="" class="img-slider" >
+      
+            </ng-template>
+            <ng-template carouselSlide> 
+              <img src="../../../assets/imgs/img banner 5.jpg"  [alt]="" class="img-slider" >
+      
+            </ng-template>
+            <ng-template carouselSlide> 
+              <img src="../../../assets/imgs/img banner 7.jpg"  [alt]="" class="img-slider" >
+      
+            </ng-template>
+            <ng-template carouselSlide> 
+              <img src="../../../assets/imgs/banner 11.jpg"  [alt]="" class="img-slider" >
+            </ng-template>
+        
+        </owl-carousel-o>
+        </div>
+      
+        
+          <div class=" col-12 col-md-3">
+              <img src="../../../assets/imgs/banner 10.jpg" class="imgWithSlider" [alt]="" >
+              <img src="../../../assets/imgs/banner 9.jpg" class="imgWithSlider" [alt]=""  >
+          </div>
+       </div>
+    </div>
+    </section>
+    <section>
+      <div class="container">
+        <owl-carousel-o [options]="curoserCategories">
+          @for ( categorie of categories; track categorie._id) {
+            <ng-template carouselSlide> 
+                  <div class="card-imgS">
+                    <img [src]="categorie.image" class="w-100 imgS" [alt]="categorie.name"   >
+                    <span class="text-center bg-body-secondary d-block"width='220px'>
+                      {{categorie.name}}
+                    </span>
+                  </div>
+            </ng-template>
+          }
+        </owl-carousel-o>
+      </div>
+    
+    </section>
+    <div class=" container">
+        <h1 class="text-center display-3 my-4 fw-bold ">Products</h1>
+    <div class=" my-4 row row-cols-1  row-cols-sm-2 row-cols-md-4  row-cols-lg-5  ">      
+      @for (product of products; track product._id) {
+        <div class="my-2 position-relative cursor-pointer">
+          <button class="position-absolute top-0 z-3 m-2 btn btn-light text-danger rounded-2 shadow-sm icon-love py-1 px-2  " (click)="addProductToWishList(product._id)">
+            <i class="fa-solid fa-heart"></i>
+        </button>
+            <div class="card shadow border-0 rounded-3 position-relative p-2  " [routerLink]="['/productDetails',product._id]" >
+           
+                <span class="position-absolute top-0 start-0 m-2 badge bg-main">{{product.brand.name}}</span>
+            
+        
+               
+                
+            
+          
+                <img [src]="product.imageCover" alt="Product Image" class="w-75 m-auto ">
+           
+                <div class="card-body text-center ">
+                    <h5 class="card-title fw-bold fs-6">{{product.title.split(" ").slice(0,2).join(" ")}}</h5>
+                    <div class="text-warning small">
+                    @for (rate of [1,2,3,4,5].slice(0,product.ratingsAverage); track $index) {
+                        <i class="fa-solid fa-star"></i>
+                    }
+                    @if (product.ratingsAverage %1 !== 0) {
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    }
+                         <span class="text-muted">({{product.ratingsQuantity}})</span>
+                    </div>
+                    <p class="card-text text-dark fs-5 fw-bold">{{product.price}} EGP</p>
+            
+                  
+
+                    <!-- <div class="">
+                        <button class="btn-main rounded-pill">Add to Cart</button>
+                    </div> -->
+                </div>
+                
+            </div>
+            <button class="position-absolute   m-2 btn   rounded-2 shadow-sm icon-add-product py-1 px-2 text-main" (click)="addProductToCart(product._id)">
+              <i class="fa-solid fa-cart-plus "></i>
+            </button>
+
+        </div>
+      }
+    </div>
+    
+    
+    
+    
+    
+    </div>

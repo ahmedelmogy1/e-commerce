@@ -1,0 +1,10 @@
+.brands-m{
+    transition: transform 400ms;
+  }
+  .brands-m:hover{
+      transform: scale(1.04);
+  }
+  
+  .brands{
+      cursor: pointer;
+  }

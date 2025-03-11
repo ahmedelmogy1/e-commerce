@@ -1,0 +1,15 @@
+<section >
+    <div class="container">
+        <div class="row">
+            @for (brand of barnds; track $index) {
+             <div class="col-12 col-sm-6 col-lg-3 p-2 brands ">
+                 <div class="shadow-sm  brands-m my-2 mx-2">
+                    <img [src]="brand.image" alt="" class="w-100 brands-img">
+                    <h4 class="text-center bg-main-light">{{brand.name}}</h4>
+                 </div>
+                 </div>
+            }
+         </div>
+    </div>
+    
+    </section>

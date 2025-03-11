@@ -1,0 +1,31 @@
+img{
+    width: 150px;
+}
+.nav-item{
+    width: fit-content;
+}
+.facebook{
+    color: #0866FF;
+}
+.twitter{
+    color: #1C96E8;
+}
+.instagram{
+    color: #C42BBB;
+}
+.cart{
+    color: #0084D1;
+}
+.youtube{
+    color: #F70000;
+}
+.linkedin{
+    color: #0077B0;
+}
+.signOut{
+    font-weight: 900;
+    color:#0084D1 ;
+}
+.signOut:hover{
+    color: red;
+}

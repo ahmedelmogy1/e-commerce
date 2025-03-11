@@ -1,0 +1,65 @@
+<section>
+  <div class="container-fluid container-md">
+    <div class="cart bg-main-light my-5 p-3 rounded-4">
+      <div class="cartTitle shadow-lg p-3 rounded-4 mb-5">
+        <div class="d-flex justify-content-between align-items-center">
+         <div class="d-flex">
+               <div class="arrExit">
+              <i class="fa-solid fa-arrow-left bg-main text-white p-2 rounded rounded-pill cursor-pointer" [routerLink]="['/home']"></i>                                      
+            </div>
+            <div class="me-2">
+              <i class="fa-brands fa-opencart text-main fa-1x mx-2"></i>
+              <span
+                class="fs-5 user-select-none fa-angellist d-inline-block mx-1 main-logo-text"
+                >Wish List</span
+              >
+            </div>
+         </div>
+           
+                    <!-- (click)="deleteAllProducts()"  [ngClass]="cartData.numOfCartItems ? '': 'disabled' " -->
+
+        </div>
+        <!--[ngClass]="cartData.numOfCartItems ? '': 'disabled'" [routerLink]="['/checkOut',cartId]"-->
+      </div>
+      @for (product of products; track $index) {
+     
+      <div class="row align-items-center p-4 p-sm-0 mt-2">
+        <div class="col-12 col-sm-2">
+          <img [src]="product.imageCover" class="w-100 imgS" alt="" />
+        </div>
+     
+        <div class="col-12 col-sm-5 col-xlg-7 text-center text-sm-start">
+          <h3 class="fs-5"></h3>
+          {{product.title}}
+          <h4 class="fs-6">
+            Rate:
+            @for (rate of [1,2,3,4,5].slice(0,product.ratingsAverage); track $index) { 
+                <i class="fa-solid fa-star text-warning"></i>
+            }
+            @if (product.ratingsAverage %1 !== 0) {
+                <i class="fa-solid fa-star-half-stroke text-warning"></i>
+            }
+          </h4>
+          <h5 class="fs-6">Category : <span class="text-main">  {{product.category.name}}</span></h5>
+          <h4 class="fs-6">Price: <span class="text-main">{{product.price}}</span></h4>
+         
+        </div>
+    
+        <div class="col-10 col-sm-4 col-xlg-2">
+            <span class="btn btn-success d-flex justify-content-center  align-items-center" (click)="addProductToCart(product._id)">
+                <i class="fa-solid fa-cart-plus"></i> <div class="mx-2">add to cart</div>
+                </span>
+          </div>
+        <div class="col-2 col-sm-1">
+          <span class="icon-exit" (click)="removerProductFromWishlist(product._id)" > 
+            <i class="fa-solid fa-xmark"></i
+          ></span>
+        </div>
+      </div>
+      @if ( $index < products.length-1) {
+      <hr />
+      }
+     }
+    </div>
+  </div>
+</section>

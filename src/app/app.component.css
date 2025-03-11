@@ -1,0 +1,16 @@
+/* :host{
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    justify-content:space-between;  
+    flex-direction: column;
+
+} */
+
+.parent{
+    min-height: 100vh !important;
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+}
+

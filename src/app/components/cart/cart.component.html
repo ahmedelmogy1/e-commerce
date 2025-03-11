@@ -1,0 +1,54 @@
+<section>
+  <div class="container-fluid container-md">
+    <div class="cart bg-main-light my-5 p-3 rounded-4 ">
+      <div class="cartTitle shadow-lg p-3 rounded-4 mb-5 ">
+        <div class="d-flex justify-content-between align-items-center ">
+         <div class=" d-flex">
+            <div class="arrExit"><i class="fa-solid fa-arrow-left bg-main text-white p-2 rounded rounded-pill cursor-pointer" [routerLink] = "['/home']" ></i></div>
+            <div class="me-2">
+              <i class="fa-brands fa-opencart text-main fa-1x mx-2"></i>
+              <span class="fs-5 user-select-none fa-angellist d-inline-block mx-1 main-logo-text ">Shop Cart</span>
+            </div>
+         </div>
+         <div class="">
+            <h5>Total price : <span class="main-logo-text">{{cartData.data.totalCartPrice}}</span></h5>
+         </div>
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+          <button class=" btn btn-outline-danger px-4 d-block" (click)="deleteAllProducts()"  [ngClass]="cartData.numOfCartItems ? '': 'disabled' " >Delete</button>
+          <button class="btn btn-outline-primary ms-auto d-block" [ngClass]="cartData.numOfCartItems ? '': 'disabled'" [routerLink]="['/checkOut',cartId]">Check Out</button></div>
+      </div>
+  @for (product of cartData.data.products; track $index) {
+    <div class="row align-items-center p-4 p-sm-0 mt-2 ">
+      <div class="col-12 col-sm-2"><img [src]="product.product.imageCover" class="w-100 imgS" alt=""></div>
+      <div class="col-12 col-sm-5 text-center text-sm-start">
+          <h3 class="fs-5">{{product.product.title}}</h3>
+          <h4 class="fs-6">Rate: 
+            @for (rate of [1,2,3,4,5].slice(0,product.product.ratingsAverage); track $index) {
+              <i class="fa-solid fa-star text-warning"></i>
+          }
+          @if (product.product.ratingsAverage %1 !== 0) {
+              <i class="fa-solid fa-star-half-stroke text-warning"></i>
+          }
+
+          </h4>
+          <h4 class="fs-6">Price: <span class="text-main">{{product.price}}</span></h4>
+          <h5 class="fs-6">Category : <span class="text-main"> {{product.product.category.name}}</span></h5>
+      </div>
+      <div class="col-5 col-sm-2 ">
+         <div class="iconPlusMinus text-center d-flex align-items-center justify-content-between w-75 py-1 p-1 "> <i class="fa-solid fa-plus icon-hover " (click)="changeCountOfProduct(product.product._id,product.count+1)"></i>  <span class="user-select-none ">{{product.count}}</span> <i class="fa-solid fa-minus icon-hover " (click)="changeCountOfProduct(product.product._id,product.count-1)" ></i></div>
+      </div>
+      <div class="col-5 col-sm-2 text-center">
+          <div class="">Total Price</div>
+          <div class="text-main"> {{product.count*product.price}} </div>
+      </div>
+      <div class="col-2 col-sm-1"><span class="icon-exit" (click)="deleteProduct(product.product._id)" > <i class="fa-solid fa-xmark"></i></span> </div>
+      
+    </div>
+    @if ( $index < cartData.data.products.length-1) {
+      <hr>
+    }
+  }
+    </div>
+  </div>
+</section>

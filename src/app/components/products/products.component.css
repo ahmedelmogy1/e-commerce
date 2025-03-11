@@ -1,0 +1,24 @@
+/* input:hover,:focus{
+box-shadow: none;
+border:2px solid goldenrod;
+} */
+
+
+/* .icon-add-product{
+    bottom: 32%;
+    right: 4%;
+    transition: background-color 400ms , color 400ms ;
+}
+.icon-add-product:hover{
+    background-color: #0aad0a;
+    color: #f0f3f2 !important;
+} */
+
+.icon-love{
+    right: 3% !important;
+}
+.icon-love:hover{
+    background-color:  rgb( 220, 53, 69);
+    color: white !important;
+
+}

@@ -1,0 +1,15 @@
+<section >
+<div class="container">
+    <div class="row">
+        @for (Category of categoriesData; track Category._id) {
+         <div class="col-12 col-sm-6 col-lg-3 p-2 category ">
+             <div class="shadow-sm  category-m my-2 mx-2">
+                <img [src]="Category.image" alt="" class="w-100 category-img">
+                <h4 class="text-center bg-main-light">{{Category.name}}</h4>
+             </div>
+             </div>
+        }
+     </div>
+</div>
+
+</section>

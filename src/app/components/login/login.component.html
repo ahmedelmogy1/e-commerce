@@ -1,0 +1,55 @@
+<div class="container shadow rounded rounded-2 my-4 p-4 bg-main-light register mt-5">
+    <h1 class="fw-bolder text-main display-5">Login :</h1>
+    @if(resText==='success'){
+        <p class="alert alert-success my-2 text-center w-25  mx-auto">{{resText}}</p>
+        }@else if(resText!='success'&& resText!=undefined) {
+        <p class="alert alert-danger my-2 text-center w-25  mx-auto">{{resText}}</p>
+        }
+<form [formGroup]="logInForm" (ngSubmit)="supmitData()" >
+    <div>
+        <label class="mb-1" for="email">email:</label>
+        <input type="email" class="form-control py-2" placeholder="ex:ahmed@gmail.com" id="email" formControlName="email" [ngClass]="{
+            ' is-valid':!logInForm.get('email')?.errors && (logInForm.get('email')?.touched || logInForm.get('email')?.dirty),
+            'is-invalid':logInForm.get('email')?.errors && (logInForm.get('email')?.touched || logInForm.get('email')?.dirty)
+        }">
+        @if (logInForm.get('email')?.errors && logInForm.get('email')?.touched) {
+            <div class="alert alert-warning my-2 p-2 f5-6 fw-bold rounded rounded-3">
+
+                @if (logInForm.get('email')?.getError('required')) {
+                    <p class="m-0">email is require</p>
+                }
+                @else if (logInForm.get('email')?.getError('email')) {
+                    <p class="m-0">email foramt is not correct</p>
+                    
+                }
+            </div>
+        }
+    </div>
+    <div>
+        <label class="mb-1" for="password">password:</label>
+        <input type="password" class="form-control py-2" id="password" formControlName="password" [ngClass]="{
+            ' is-valid':!logInForm.get('password')?.errors && (logInForm.get('password')?.touched || logInForm.get('password')?.dirty),
+            'is-invalid':logInForm.get('password')?.errors && (logInForm.get('password')?.touched || logInForm.get('password')?.dirty)
+        }">
+        @if (logInForm.get('password')?.errors && logInForm.get('password')?.touched) {
+            <div class="alert alert-warning my-2 p-2 f5-6 fw-bold rounded rounded-3">
+
+                @if (logInForm.get('password')?.getError('required')) {
+                    <p class="m-0">password is require</p>
+                }
+                @else if (logInForm.get('password')?.getError('pattern')) {
+                    <p class="m-0">password must be at least 6</p>
+                    
+                }
+            </div>
+        }
+    </div>
+    <button  class="btn-main mt-2 w-25 mx-auto d-block">login
+        @if (loding) {
+            <i class="fa-solid fa-spinner fa-spin"></i>
+        }
+    </button>
+
+    <p class="text-center my-3 text-main user-select-none forgetStyle" [routerLink]="['/resetPassword']" >Forgot your password?</p>
+</form>
+</div>

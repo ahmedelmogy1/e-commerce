@@ -1,2 +1,0 @@
-import './polyfills.server.mjs';
-import{a as o}from"./chunk-CNHVUDDN.mjs";import{Gc as i,Q as e,W as r}from"./chunk-73DWNJ7F.mjs";var m=(()=>{class t{constructor(){this._HttpClient=r(i)}getAllCaregories(){return this._HttpClient.get(`${o.baseUrl}/api/v1/categories`)}static{this.\u0275fac=function(n){return new(n||t)}}static{this.\u0275prov=e({token:t,factory:t.\u0275fac,providedIn:"root"})}}return t})();export{m as a};

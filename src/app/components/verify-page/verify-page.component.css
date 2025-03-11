@@ -1,0 +1,19 @@
+.verification-input {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 50px;
+}
+.verification-input input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    transition: border-color 0.2s;
+}
+.verification-input input:focus {
+    border-color: #007bff;
+    outline: none;
+}

@@ -1,0 +1,59 @@
+img{
+    width: 40px;
+}
+.nav-item{
+    width: fit-content;
+}
+.facebook{
+    color: #0866FF;
+}
+.twitter{
+    color: #1C96E8;
+}
+.instagram{
+    color: #C42BBB;
+}
+.cart{
+    color: #0084D1;
+}
+.youtube{
+    color: #F70000;
+}
+.linkedin{
+    color: #0077B0;
+}
+.signOut{
+    font-weight: 900;
+    color:#0084D1 ;
+}
+.signOut:hover{
+    color: red;
+}
+.countOfCart{
+    font-size: 13px;
+    border-radius: 50%;
+    top: 25%;
+    left: 48%;
+}
+.amazonIcon{
+    padding: 0;
+}
+.navbar-nav-icon{
+    flex-direction: row;
+    justify-content: center;
+}
+.nav-item-icon{
+    padding-inline: 1rem;
+}
+
+@media screen and (min-width:768px) {
+    .navbar-nav-icon{
+        flex-direction: row;
+        justify-content: none;
+    }
+    .nav-item-icon{
+        padding-inline: 0.1rem;
+    }
+}
+
+

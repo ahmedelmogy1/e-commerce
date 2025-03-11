@@ -1,0 +1,94 @@
+<section class="my-4 ">
+    
+
+@for (order of orders; track $index) {
+  <div class="container-fluid container-md py-5 bg-main-light px-5 rounded rounded-4 my-5 border border-2">
+    <h2 class=" text-center fw-bolder  w-fit d-block mx-auto rounded rounded-3 px-3 py-2 bg-main text-white ">{{$index+1}}</h2>
+
+    <h1 class="text-center display-6 my-4 fw-bold text-main"  >Orders # {{order.id}} </h1>
+
+<div class="row">
+    
+    <div class="timeline col-12 col-md-6 d-flex justify-content-start align-items-center align-content-center flex-wrap ">
+
+        <div class="timeline-step completed w-100">
+          <div class="timeline-circle">✔</div>
+          <div class="timeline-text">
+            <h5>Ordered</h5>
+            <p class="text-muted small">Your order has been placed successfully.</p>
+          </div>
+        </div>
+   
+        <div class="timeline-step completed w-100">
+          <div class="timeline-circle">✔</div>
+          <div class="timeline-text">
+            <h5>Confirmed</h5>
+            <p class="text-muted small">Your order has been confirmed.</p>
+          </div>
+        </div>
+  
+        
+        <div class="timeline-step in-progress w-100">
+          <div class="timeline-circle"> <i class="fas fa-truck"> </i> </div>
+          <div class="timeline-text">
+            <h5>Out for Delivery</h5>
+            <p class="text-muted small">Your order is on its way.</p>
+          </div>
+        </div>
+  
+        <div class="timeline-step pending w-100">
+          <div class="timeline-circle">✖</div>
+          <div class="timeline-text">
+            <h5>Delivered</h5>
+            <p class="text-muted small">Delivery has not been completed yet.</p>
+          </div>
+        </div>
+  
+        <div class="timeline-step w-100" [ngClass]="iconStatePaid[$index] ? 'completed' : 'pending' " >
+          <div class="timeline-circle">@if(iconStatePaid[$index]){✔} @else {✖}</div>
+          <div class="timeline-text">
+            <h5>Paid</h5>
+            <p class="text-muted small">Payment has not been received yet.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 ">
+        @for (item of order.cartItems; track $index) {
+          <div class="row my-2 border border-2 border-secondary p-2 rounded rounded-4 cardOrder ">
+            <div class="col-12 col-sm-9  p-0 d-flex justify-content-center align-items-center">
+
+              <div class="card-body text-center text-md-start ">
+                   <h5 class="card-title fw-bold fs-6"> {{item.product.title}}  </h5>  <!--{{product.title.split(" ").slice(0,2).join(" ")}} -->
+                  <div class="text-warning small">
+                  @for (rate of [1,2,3,4,5].slice(0,item.product.ratingsAverage); track $index) {   <!--.slice(0,product.ratingsAverage); track $index-->
+                      <i class="fa-solid fa-star"></i>
+                  }
+                  @if ( item.product.ratingsAverage%1 !== 0) {     <!--product.ratingsAverage-->
+                      <i class="fa-solid fa-star-half-stroke"></i>
+                  }
+                       <span class="text-muted">({{item.product.ratingsQuantity}})</span>  <!--{{product.ratingsQuantity}}-->
+                  </div>
+                  <p class="card-text text-dark fs-5 fw-bold mb-0">{{item.price}} EGP</p> <!--{{product.price}}-->
+
+                  <span class="fs-5 fw-bolder">count: {{item.count}}</span>
+          
+                
+  
+                  <!-- <div class="">
+                      <button class="btn-main rounded-pill">Add to Cart</button>
+                  </div> -->
+              </div>
+              
+            </div>
+            <div class="col-12 col-sm-3  p-0 ">
+              <img [src]="item.product.imageCover"  class=" imgS d-block mx-auto rounded rounded-2 border border-2 border-secondary" height="100px" alt="">
+            </div>
+            
+      </div>
+        }
+      </div>
+</div>
+  </div>
+}
+
+</section>

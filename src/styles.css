@@ -1,0 +1,207 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+:root {
+  --main-color: #0084D1;
+  --light-color: #f0f3f2;
+  --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+    rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+  --font-family: "Encode Sans Expanded", sans-serif;
+  --rating-color: #ffc908;
+  
+}
+
+body {
+  font-family: var(--font-family) !important;
+ 
+}
+
+.nav-style{
+  text-decoration: none;
+  color: #6B7280;
+  font-weight: 900 !important;
+}
+
+.nav-link {
+  transition: unset !important;
+}
+.nav-style:hover{
+  color: #0084D1 !important;
+}
+.active-link {
+  font-weight: 900 !important;
+  color: var(--main-color) !important;
+  border-radius: 5px;
+}
+
+.rating-color {
+  color: var(--rating-color);
+}
+.cursor-pointer {
+  cursor: pointer !important;
+}
+a,
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+/* .product {
+  border-radius: 5px;
+  border: solid 1px var(--main-color);
+  transition: box-shadow 0.5s;
+  overflow: hidden;
+} */
+
+.product:hover {
+  box-shadow: 0 0 10px #0084D1;
+}
+
+.font-sm {
+  font-size: 12px;
+}
+.text-main {
+  color: var(--main-color) !important;
+}
+.bg-main {
+  background-color: var(--main-color) !important;
+}
+.bg-main-light {
+  background-color: var(--light-color) !important;
+}
+.btn-main {
+  background-color: var(--main-color);
+  padding: 5px 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  /* margin-inline: 1rem; */
+
+}
+.btn-main:disabled {
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+.btn-main:disabled:hover {
+  background-color: #ccc;
+}
+.btn-main:hover {
+  background-color: #0084D1;
+}
+
+.icon-add-product{
+  bottom: 32%;
+  right: 4%;
+  transition: background-color 400ms , color 400ms ;
+}
+.icon-add-product:hover{
+  background-color: #0084D1 !important;
+  color: #f0f3f2 !important;
+}
+.main-logo-text{
+  font-family: "Concert One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #0084D1;
+}
+
+
+/* border bule */
+
+.iconPlusMinus{
+  border: gray 1px solid;
+  border-radius: 10px;
+ 
+}
+.icon-hover{
+  transition: 400ms color; cursor: pointer;
+}
+.icon-hover:hover{
+color: #0084ca !important;
+}
+
+
+.icon-exit{
+  padding: 1px 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.icon-exit i{
+  transition: transform 400ms ;
+}
+.icon-exit i:hover{
+  transform: rotate(90deg);
+  animation: shake 0.5s ease-in-out alternate;
+
+}
+.icon-exit:hover i{
+    transform: rotate(90deg);
+    animation: shake 0.7s ease-in-out alternate;
+
+}
+.icon-exit:hover{
+color: red;
+border: red solid 1px ;
+transform: rotate(90deg);
+}
+@keyframes shake {
+  50% { transform: translateX(0); }
+  60% { transform: translateX(-3px); }
+  70% { transform: translateX(3px); }
+  80% { transform: translateX(-3px); }
+  90% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+
+@media screen and (max-width:768px) {
+  .icon-exit i:hover{
+    transform: none;
+    animation: none;
+  
+  }
+  .icon-exit:hover i{
+      transform: none;
+      animation: noen;
+  
+  }
+  .icon-exit:hover{
+  color: black;
+  border: none ;
+  transform: none;
+}
+@media screen and (max-width:575px) {
+  .imgS{
+    height: 150px !important;
+  }  
+}
+}
+
+
+/* toster library*/
+.toast-container .ngx-toastr:hover{
+  box-shadow: 0 0 5px #000000 !important;
+} 
+.forgetStyle{
+  cursor: pointer;
+}
+.forgetStyle:hover{
+  text-decoration-line: underline;
+}
+
+
+
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-thumb{
+
+  background: #0697eb;
+border-radius: 10px;
+
+}
+
+

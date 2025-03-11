@@ -1,0 +1,30 @@
+<div class="slider-container">
+    @if (images.length > 0) {
+      <!-- Main Slider -->
+      <div class="main-slider">
+        <div class="slider-track" #sliderTrack>
+          @for (image of images; track image.id) {
+            <div 
+              class="slide"
+              [ngStyle]="{ 'background-image': 'url(' + image + ')' }"
+            ></div>
+          }
+        </div>
+        <button class="nav-btn prev" (click)="prevSlide()">‹</button>
+        <button class="nav-btn next" (click)="nextSlide()">›</button>
+      </div>
+  
+      <!-- Thumbnails -->
+      <div class="thumbnails">
+        @for (image of images; track image.id; let i = $index) {
+          <div 
+            class="thumbnail" 
+            [class.active]="i === currentIndex"
+            (click)="goToSlide(i)"
+          >
+            <img [src]="image" alt="Thumbnail">
+          </div>
+        }
+      </div>
+    }
+  </div>

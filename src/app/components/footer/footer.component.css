@@ -1,0 +1,17 @@
+.icon-pay{
+   width: 70px;
+   cursor: pointer;
+}
+.icon-store{
+    width: 150px;
+   cursor: pointer;
+
+}
+@media screen and (max-width:425px) {
+    .icon-pay{
+        width: 40px;
+     }
+     .icon-store{
+        width: 100px;
+     }
+}

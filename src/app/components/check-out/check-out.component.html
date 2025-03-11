@@ -1,0 +1,59 @@
+<div class="container-fluid container-md">
+   <div class="my-5 bg-main-light  rounded rounded-4 user-select-none py-5 px-5">
+    <h1 class=" title-check pt-1 pb-3 d-block mx-auto fw-bolder display-6">Shipping Address</h1>
+
+    <div class="row my-4">
+        <div class="col-12 col-sm-6 align-items-center">
+            <h3 class="text-center  main-logo-text">Address</h3>
+            <form [formGroup]="shippingAddress" (ngSubmit)="onSubmit()" class=" d-flex flex-column py-4 gap-3"  >
+                <input formControlName="city" class="form-control shadow-none" type="text" [(ngModel)]="cityI"   placeholder="Enter Your City" [ngClass]="{
+                    ' is-valid':!shippingAddress.get('city')?.errors && (shippingAddress.get('city')?.touched || shippingAddress.get('city')?.dirty),
+                    'is-invalid':shippingAddress.get('city')?.errors && (shippingAddress.get('city')?.touched || shippingAddress.get('city')?.dirty)
+                }" >
+                <input formControlName="details"  class="form-control shadow-none" type="text" [(ngModel)]="detailsI"  placeholder="Enter Details" [ngClass]="{
+                    ' is-valid':!shippingAddress.get('details')?.errors && (shippingAddress.get('details')?.touched || shippingAddress.get('details')?.dirty),
+                    'is-invalid':shippingAddress.get('details')?.errors && (shippingAddress.get('details')?.touched || shippingAddress.get('details')?.dirty)
+                }">
+                <input formControlName="phone" class="form-control shadow-none" type="tel" inputmode="numeric" [(ngModel)]="phoneI"  placeholder="Enter Your Phone" [ngClass]="{
+                    ' is-valid':!shippingAddress.get('phone')?.errors && (shippingAddress.get('phone')?.touched || shippingAddress.get('phone')?.dirty),
+                    'is-invalid':shippingAddress.get('phone')?.errors && (shippingAddress.get('phone')?.touched || shippingAddress.get('phone')?.dirty)
+                }">
+                <button class="btn btn-outline-primary" >payment</button>
+            </form>
+        </div>
+        <div class="col-12 col-sm-6 ">
+            <h3 class="text-center  main-logo-text">Application Summary</h3>
+            <div class="border border-1 border-secondary rounded-4 p-2">
+            <h5 class="fw-bold">Total price : <span class="main-logo-text">1000</span></h5>
+            <hr>
+            <h5 class="fw-bold">
+                city: <span class="main-logo-text fw-light"> {{cityI}} </span>
+            </h5>
+            <h5 class="fw-bold">
+                Deatils: <span class="main-logo-text">{{detailsI}}</span>
+            </h5>
+            <h5 class="fw-bold">
+                Phone: <span class="main-logo-text">+20 {{phoneI}}</span>
+            </h5>
+            <hr>
+            <div class="d-flex justify-content-evenly text-center main-logo-text">
+             
+                <div class="">
+                    <h5> online payment</h5>
+                    <input type="radio" name="pay"   class="form-check-input"  [(ngModel)]="selectedOption" value = 'option1'    >
+                </div>
+                <div class="">
+                    <h5> Cash on Delivery</h5>
+                    <input type="radio" name="pay" id="checkOnDelivery" class="form-check-input" [(ngModel)]="selectedOption"  value = 'option2'>
+                </div>
+           
+            
+            </div>
+
+            </div>
+        </div>
+    </div>
+   </div>
+
+
+</div>

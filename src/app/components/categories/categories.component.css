@@ -1,0 +1,15 @@
+.category-img{
+    object-fit: cover;
+    height: 400px;
+}
+
+.category-m{
+  transition: transform 400ms;
+}
+.category-m:hover{
+    transform: scale(1.04);
+}
+
+.category{
+    cursor: pointer;
+}
